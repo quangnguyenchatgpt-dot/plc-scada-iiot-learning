@@ -2,7 +2,7 @@
 
 Chương trình tự học kỹ thuật **Điện – Điện tử → ESP32 Embedded → PLC / HMI / SCADA → Industrial IoT**, ưu tiên mô phỏng và bài tập có chấm điểm minh bạch.
 
-**Thời lượng:** 104 tuần · 3 buổi/tuần (thứ Hai, Tư, Sáu) · 2 giờ/buổi = **312 buổi / 624 giờ**. Ngày bắt đầu kế hoạch: 02/11/2026 (có thể thay đổi mà không coi ngày trên lịch là tiến độ học).
+**Thời lượng:** 104 tuần nội dung · 3 buổi/tuần dự kiến · 120 phút/buổi = **312 buổi / 624 giờ**. **Chọn bất kỳ 3 ngày mỗi tuần**, không ấn định lịch; bỏ lỡ thì tiếp tục đúng buổi chưa đạt, không nhảy bài.
 
 **Python tối thiểu: 3.9** (khuyến nghị môi trường ảo; các công cụ CLI cốt lõi chỉ dùng thư viện chuẩn). Các phần mềm PLC/SCADA/ESP32 có yêu cầu riêng.
 
@@ -31,7 +31,7 @@ Các phần trên được mô tả chi tiết ở [architecture](docs/architect
 
 ## Lịch học và giáo án
 
-- Lịch đầy đủ từng buổi: [Google Sheets](https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit) và [Excel được version hóa](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx).
+- Trình tự đầy đủ từng buổi: [Google Sheets](https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit) và [Excel được version hóa](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx).
 - Giáo án đã viết: [Tuần 01](curriculum/semester-01/week-01/README.md), [Tuần 23 — ESP32](curriculum/semester-01/week-23/README.md), [Tuần 83 — ESP32 IIoT](curriculum/semester-04/week-83/README.md).
 - **Các tuần chưa có file giáo án chi tiết**; AI chỉ được tạo dự thảo dựa trên lịch và nguồn được kiểm tra, không khẳng định đã tồn tại 312 bài giảng.
 
