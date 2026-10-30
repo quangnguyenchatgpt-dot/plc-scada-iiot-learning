@@ -81,3 +81,26 @@ Xem [hướng dẫn cấu hình và smoke tests cho từng nền tảng](docs/ag
 ## Bản Excel trong GitHub
 - [Lộ trình chuẩn 104 tuần / 312 buổi (XLSX)](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx)
 - **Google Sheets** là bản dùng theo dõi tiến độ; **XLSX trong Git** là bản snapshot để lưu phiên bản và làm việc offline. Khi thay đổi một bản cần chủ động đồng bộ bản còn lại.
+
+## Lưu và khôi phục tiến độ học tập
+
+Dự án có hệ thống theo dõi **312 buổi** bằng dữ liệu version-controlled trong Git:
+
+- [Hướng dẫn lưu tiến độ](learning/README.md)
+- [Trạng thái máy đọc được](learning/progress.json)
+- [Nhật ký thay đổi](learning/history.jsonl)
+- [Công cụ Python](scripts/progress.py)
+
+```bash
+python scripts/progress.py status
+python scripts/progress.py start 1
+# Sau khi đã tạo và lưu bài giải thực tế:
+python scripts/progress.py submit 1 --evidence labs/semester-01/week-01/report.md
+# Chỉ chấm nếu đã có bài và bằng chứng:
+python scripts/progress.py grade 1 --score 80 --evidence labs/semester-01/week-01/report.md --feedback "Đạt"
+git add learning/progress.json learning/history.jsonl
+git commit -m "Track learning progress"
+git push origin main
+```
+
+**Quan trọng:** Lệnh cập nhật tiến độ ghi vào tệp local; chỉ `git push` mới lưu tiến độ mới lên GitHub để các agent/máy khác đọc được. Việc ghi nhận điểm phải dựa trên bài nộp thật. Không tự động đồng bộ Google Sheets.
