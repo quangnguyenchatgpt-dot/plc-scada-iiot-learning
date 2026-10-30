@@ -1,34 +1,18 @@
-# Learning progress (student-controlled)
+# Tiến độ học tập — hướng dẫn đọc
 
-This repository does not automatically track study completion. Update this file manually or ask your agent to update it **after you authorize the edit**.
+**Nguồn chính xác là [progress.json](progress.json)**, không phải bảng markdown này. Lịch: 104 tuần × 3 buổi × 2 giờ = **312 buổi / 624 giờ** (thứ Hai, Tư, Sáu).
 
-| Field | Value |
-|---|---|
-| Current week | 01 |
-| Current day | 01 |
-| State | Not Started |
-| Planned pace | 2 hours/day, Monday / Wednesday / Friday |
-| Last completed session | None |
-| Last confirmed score | Not assessed |
-| Current blockers | None recorded |
-| Next suggested action | Read Week 01 Day 01 |
-| Daily Google Sheet | https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit |
+Trạng thái ban đầu chưa có buổi nào hoàn thành và chưa có điểm. Agent phải đọc dữ liệu mới nhất từ `progress.json`, không suy luận theo ngày hiện tại. Nhật ký thay đổi nằm trong [history.jsonl](history.jsonl).
 
-## Session history
-| Date | Week/Day | Topic | Evidence path/commit | Score | Status | Next action |
-|---|---|---|---|---|---|---|
-| | | | | | | |
+## Lệnh cần dùng
 
-## Weak concepts / spaced repetition
-| Concept | Evidence | Review date | Result |
-|---|---|---|---|
-| | | | |
+```bash
+python scripts/progress.py status
+python scripts/progress.py start 1
+python scripts/progress.py submit 1 --evidence labs/semester-01/week-01/report.md
+python scripts/progress.py grade 1 --score 85 --evidence labs/semester-01/week-01/report.md --feedback "Nhận xét dựa trên bằng chứng"
+```
 
-## Status definitions
-- Not Started: no evidence.
-- In Progress: lesson in progress, not submitted.
-- Submitted: solution provided, not assessed.
-- Needs Revision: grade below 75 or critical defect.
-- Passed: score ≥75 with satisfactory evidence.
+**Chỉ dùng đường dẫn có thật, đúng bài nộp.** Các lệnh thao tác tệp cục bộ; muốn agent khác thấy, cần commit/push thay đổi lên GitHub.
 
-The daily Google Sheet may use different status labels; synchronize intentionally, never silently.
+Hướng dẫn đầy đủ: [learning/README.md](README.md). Google Sheet theo dõi tùy chọn: https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit
