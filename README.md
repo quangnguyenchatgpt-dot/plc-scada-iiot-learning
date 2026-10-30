@@ -4,6 +4,8 @@ Chương trình tự học kỹ thuật **Điện – Điện tử → ESP32 Emb
 
 **Thời lượng:** 104 tuần · 3 buổi/tuần (thứ Hai, Tư, Sáu) · 2 giờ/buổi = **312 buổi / 624 giờ**. Ngày bắt đầu kế hoạch: 02/11/2026 (có thể thay đổi mà không coi ngày trên lịch là tiến độ học).
 
+**Python tối thiểu: 3.9** (khuyến nghị môi trường ảo; các công cụ CLI cốt lõi chỉ dùng thư viện chuẩn). Các phần mềm PLC/SCADA/ESP32 có yêu cầu riêng.
+
 ## Bắt đầu trong 3 bước
 
 1. Đọc [AGENTS.md](AGENTS.md) để agent đóng vai giảng viên; xem [cấu trúc dự án](docs/architecture.md).
