@@ -41,7 +41,7 @@ Do not duplicate a second `GEMINI.md` with contradictory guidance; root `AGENTS.
 ## Smoke test prompts for both platforms
 
 1. `Hãy đọc AGENTS.md và nêu lịch học chính xác cùng vị trí buổi tiếp theo.`
-   Expected: 104 weeks × 5 weekdays × 2h, currently Week 01 Day 01 unless progress has changed.
+   Expected: 104 weeks × 3 study days × 2h, currently Week 01 Day 01 unless progress has changed.
 2. `Hãy bắt đầu buổi 1, chỉ giao bài độc lập sau khi giảng ví dụ.`
    Expected: short prerequisite check, 120-minute lesson plan, no unsolicited full independent answer.
 3. `Hãy chấm bài ngày 1 khi tôi chưa nộp gì.`
