@@ -3,24 +3,24 @@
 Chương trình tự học Kỹ thuật điều khiển & Tự động hóa công nghiệp, ưu tiên **mô phỏng trước, thiết bị thật sau**.
 
 ## Lịch học
-- **104 tuần × 5 ngày/tuần × 2 giờ/ngày = 520 buổi, 1.040 giờ**
-- Thứ Hai–Thứ Sáu: học và thực hành; Thứ Bảy–Chủ Nhật: nghỉ.
+- **104 tuần × 3 ngày/tuần × 2 giờ/ngày = 312 buổi, 624 giờ**
+- Thứ Hai, Thứ Tư và Thứ Sáu: học 2 giờ/buổi; các ngày còn lại nghỉ hoặc tự ôn tùy chọn.
 - Lịch dự kiến: 02/11/2026–27/10/2028 (có thể đổi).
 - [Google Sheets – lộ trình từng ngày](https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit)
 
 ## Bắt đầu
 1. Đọc [hướng dẫn học](docs/study-guide.md) và [nguồn tài liệu](resources/README.md).
-2. Thực hiện [tuần 01](curriculum/semester-01/week-01/README.md) theo lịch 5 buổi.
+2. Thực hiện [tuần 01](curriculum/semester-01/week-01/README.md) theo lịch 3 buổi.
 3. Lưu bài làm trong `labs/`; ghi kết quả/ảnh chụp vào `notes/`.
 4. Cập nhật trạng thái trong Google Sheets; đưa code, test và kết quả vào commit.
 
 ## Lộ trình
 | Giai đoạn | Tuần | Nội dung |
 |---|---:|---|
-| HK1 | 1–26 | Toán, điện, mạch, điện tử, Python/mô phỏng |
+| HK1 | 1–26 | Toán, điện, mạch, điện tử, Python, ESP32 cơ bản (tuần 23–26) |
 | HK2 | 27–52 | Tín hiệu, điều khiển, cảm biến, truyền động, PLC |
 | HK3 | 53–78 | PLC nâng cao, PID, HMI/SCADA, mạng công nghiệp, đồ án |
-| HK4 | 79–104 | MQTT, bảo mật OT, Python gateway, database, API, dashboard, capstone |
+| HK4 | 79–104 | MQTT, bảo mật OT, ESP32 + IIoT (tuần 83–86), Python gateway, database, API, dashboard, capstone |
 
 [Xem đề bài project](projects/README.md) · [Tiêu chí nghiệm thu](docs/assessment.md) · [Mẫu báo cáo lab](templates/lab-report.md)
 
@@ -59,7 +59,7 @@ GitHub Copilot có prompt files:
 - [Grade assignment](.github/prompts/grade-assignment.prompt.md)
 - [Prepare lab](.github/prompts/prepare-lab.prompt.md)
 
-**Lưu ý:** các instruction files được áp dụng tùy agent/IDE và cấu hình phiên làm việc. Chúng không tạo ra một dịch vụ AI chạy thường trực trên GitHub; cần mở repository trong agent có hỗ trợ đọc quy tắc. Lịch 104 tuần ở Google Sheets là kế hoạch, **không đồng nghĩa đã có 520 giáo án chi tiết**. Việc chấm và ghi tiến độ yêu cầu có bài làm thực tế và quyền cập nhật.
+**Lưu ý:** các instruction files được áp dụng tùy agent/IDE và cấu hình phiên làm việc. Chúng không tạo ra một dịch vụ AI chạy thường trực trên GitHub; cần mở repository trong agent có hỗ trợ đọc quy tắc. Lịch 104 tuần ở Google Sheets là kế hoạch, **không đồng nghĩa đã có 312 giáo án chi tiết**. Việc chấm và ghi tiến độ yêu cầu có bài làm thực tế và quyền cập nhật.
 
 
 ## Codex & Google Antigravity (portable instructor skills)
@@ -76,3 +76,8 @@ Cả hai nền tảng dùng chung `AGENTS.md` và **4 skills** trong `.agents/sk
 Antigravity có thêm quy tắc kích hoạt theo ngữ cảnh trong `.agents/rules/`. **Không cần tạo `GEMINI.md` trùng lặp** vì đã có `AGENTS.md` dùng chung.
 
 Xem [hướng dẫn cấu hình và smoke tests cho từng nền tảng](docs/agent-platforms.md). Các skill có thể được gọi tự động hoặc bằng cú pháp trên tùy phiên bản agent. Repository chỉ quy định hành vi; kết nối Google Sheets và khả năng thực thi code phụ thuộc quyền/công cụ của agent.
+
+
+## Bản Excel trong GitHub
+- [Lộ trình chuẩn 104 tuần / 312 buổi (XLSX)](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx)
+- **Google Sheets** là bản dùng theo dõi tiến độ; **XLSX trong Git** là bản snapshot để lưu phiên bản và làm việc offline. Khi thay đổi một bản cần chủ động đồng bộ bản còn lại.
