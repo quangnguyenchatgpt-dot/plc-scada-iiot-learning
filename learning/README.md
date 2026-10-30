@@ -6,7 +6,7 @@
 - **`learning/progress.md`**: hướng dẫn và tóm tắt, không tự động chỉnh bằng tay khi JSON đã có dữ liệu.
 - Google Sheets: kế hoạch và bảng theo dõi tùy chọn. **Không có đồng bộ hai chiều tự động.**
 
-Mỗi buổi định danh bằng `session_id` 1–312; tuần `ceil(session_id/3)`, buổi trong tuần `(session_id-1)%3+1`. Theo lịch thứ Hai/Tư/Sáu. Dữ liệu ban đầu trống: **chưa học / chưa có điểm**.
+Mỗi buổi định danh bằng `session_id` 1–312; tuần `ceil(session_id/3)`, buổi trong tuần `(session_id-1)%3+1`. Học 120 phút/buổi, chọn bất kỳ 3 ngày trong tuần, không có thứ/ngày lịch cố định. Nếu bỏ lỡ, tiếp tục buổi chưa passed. Dữ liệu ban đầu trống: **chưa học / chưa có điểm**.
 
 ## Dùng công cụ (Python 3.9+; không cài thư viện ngoài)
 
@@ -36,6 +36,6 @@ git push origin main
 
 - Chỉ `passed` nếu score ≥75, có bằng chứng bài nộp và không có lỗi an toàn nghiêm trọng.
 - Lần chấm mới được lưu vào `assessments[]` (không ghi đè điểm cũ).
-- `status` tìm buổi **chưa passed đầu tiên**; không dựa vào ngày hiện tại.
+- `status` tìm buổi **chưa passed đầu tiên**; không dựa vào ngày hiện tại hoặc số tuần lịch.
 - Tệp JSON không ghi mật khẩu, token, thông tin cá nhân nhạy cảm hay dữ liệu hệ thống sản xuất.
 - Không tự động đồng bộ lên Google Sheets; nếu cần, thực hiện riêng khi có quyền kết nối và xác nhận.
