@@ -1,29 +1,29 @@
-# Báo cáo review và chuẩn hóa cấu trúc
+# Báo cáo review & chuẩn hóa cấu trúc dự án
 
-## Phạm vi
-Đối chiếu cây thư mục GitHub, README, AGENTS.md, tài liệu nghiệp vụ, CLI quản lý tiến độ và bộ test. **Không** sửa/xóa trạng thái học đã ghi; không thay đổi nội dung Excel đã version hóa.
+## Phạm vi và nguyên tắc
+Đã khảo sát tree GitHub, kiểm tra nội dung README, AGENTS.md, cấu hình agent, CLI và unit tests. Đợt chuẩn hóa này chỉ thay đổi **cấu trúc tài liệu và hướng dẫn**; không xóa/di chuyển giáo án, nguồn Excel hay sửa `learning/progress.json`.
 
-## Các vấn đề được phát hiện
-| Mức độ | Vấn đề | Hướng khắc phục |
+## Phát hiện & xử lý
+| Ưu tiên | Phát hiện | Cách xử lý |
 |---|---|---|
-| Cao | AGENTS.md nhắc `progress.md` là nguồn chính ở đầu, nhưng cuối file xác định `progress.json` mới là nguồn chuẩn | Xác định rõ JSON là canonical ở đầu, dẫn tới tài liệu quy trình |
-| Cao | README chứa nhiều phần hướng dẫn trùng lặp và ví dụ dẫn tới file report chưa tồn tại | Rút gọn README, phân chia quickstart và manual |
-| Trung bình | `labs/` được dùng như ví dụ bài đã làm, dễ khiến agent chấm mã mẫu | Xác định labs=sample, submissions=student work |
-| Trung bình | Không có bản đồ kiến trúc/canonical source rõ ràng | Thêm docs/architecture.md và index |
-| Trung bình | `progress.json` và Google Sheets không tự đồng bộ nhưng một số mô tả dễ làm người dùng hiểu là có | Ghi rõ ranh giới và quy trình cập nhật |
-| Trung bình | Giáo án có 3 tuần khởi đầu; Excel lên lịch đủ 312 buổi | Index liệt kê giáo án thật, không khẳng định đã viết hết |
-| Thấp | Test và README nằm phân tán | Tổ chức bằng index và liên kết, không đổi path gây lỗi |
+| Cao | Mâu thuẫn giữa `progress.md` và `progress.json` về nguồn trạng thái chính | Quy định JSON là canonical; Markdown chỉ là hướng dẫn |
+| Cao | README cũ dài, lặp vai trò cấu hình và ví dụ đường dẫn chưa tồn tại | Thiết kế quickstart rõ ràng, phân tách sang docs |
+| Cao | Dễ chấm nhầm lab mẫu như bài đã nộp | Quy định `labs/` là sample, `submissions/` là bài thật |
+| Trung bình | Chưa có sơ đồ cây và quy tắc cập nhật | Tạo `docs/architecture.md` và index |
+| Trung bình | Khả năng hiểu nhầm Excel/Sheets tự đồng bộ với Git | Ghi rõ snapshot, tiến độ, chính sách đồng bộ |
+| Trung bình | 104 tuần trong roadmap nhưng chưa có 104 giáo án | Index các tuần đã có, yêu cầu đánh dấu draft |
+| Trung bình | Adapter Copilot/Cursor/skills còn trỏ tiến độ tới `progress.md` | Chuyển sang `progress.json` |
+| Thấp | Các lệnh và tài liệu bị phân tán | Bổ sung link điều hướng và hướng dẫn phân lớp |
 
-## Tiêu chuẩn acceptance
-1. Giữ 104 tuần, 312 buổi, 624 giờ, lịch thứ Hai/Tư/Sáu.
-2. `AGENTS.md` định nghĩa rõ nguồn trạng thái `learning/progress.json`.
-3. Không xóa/di chuyển tệp giáo án hiện có và bản Excel.
-4. Skills, Codex, Antigravity, Cursor, Copilot dùng chung hợp đồng giảng viên.
-5. Có hướng dẫn `start → submit → grade → git commit/push` minh bạch.
-6. Không tạo điểm hoặc bài nộp giả. Chỉ đẩy dữ liệu học tập khi có sự cho phép.
-7. Có CI kiểm thử CLI tiến độ; phải xác minh kết quả chạy CI riêng, không coi file workflow tồn tại là tests passed.
+## Tiêu chí hoàn thành
+- Lịch chuẩn: **104 tuần × 3 buổi × 2 giờ = 312 buổi / 624 giờ**.
+- Canonical progress: `learning/progress.json`; evidence từ bài thực tế; agent không tự ghi điểm.
+- Giữ nguyên file Excel và các giáo án đã soạn.
+- Các adapter Codex, Antigravity, Cursor, Copilot hướng về `AGENTS.md`.
+- CI có workflow kiểm thử; **kết quả chạy CI cần được kiểm chứng riêng**.
 
-## Còn cần triển khai
-- Biên soạn giáo án có nguồn bài giảng cụ thể cho 309 tuần/đầu mục chưa có tệp (thực chất là 101 tuần chưa có file riêng, không phải 309 tuần).
-- Nâng chất lượng bài lab và bộ test chuyên ngành.
-- Công cụ đồng bộ Google Sheets có kiểm soát/xử lý xung đột nếu học viên yêu cầu.
+## Hạn chế còn tồn tại
+- **101 tuần** chưa có giáo án Markdown riêng (đã có 3 tuần khởi đầu).
+- Lịch Excel/Google Sheets có nhiều đường dẫn tới trang chủ hoặc danh mục, chưa xác minh từng chương/bài.
+- Chưa có công cụ đồng bộ trạng thái JSON → Google Sheets; cần xây có quản lý xung đột khi thực sự cần.
+- Chưa kiểm thử thao tác end-to-end trên cả bốn IDE hoặc xác minh việc chạy GitHub Actions trong đợt review này.
