@@ -1,106 +1,60 @@
-# PLC / SCADA + IIoT Learning
+# PLC / SCADA + IIoT Learning Workspace
 
-Chương trình tự học Kỹ thuật điều khiển & Tự động hóa công nghiệp, ưu tiên **mô phỏng trước, thiết bị thật sau**.
+Chương trình tự học kỹ thuật **Điện – Điện tử → ESP32 Embedded → PLC / HMI / SCADA → Industrial IoT**, ưu tiên mô phỏng và bài tập có chấm điểm minh bạch.
 
-## Lịch học
-- **104 tuần × 3 ngày/tuần × 2 giờ/ngày = 312 buổi, 624 giờ**
-- Thứ Hai, Thứ Tư và Thứ Sáu: học 2 giờ/buổi; các ngày còn lại nghỉ hoặc tự ôn tùy chọn.
-- Lịch dự kiến: 02/11/2026–27/10/2028 (có thể đổi).
-- [Google Sheets – lộ trình từng ngày](https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit)
+**Thời lượng:** 104 tuần · 3 buổi/tuần (thứ Hai, Tư, Sáu) · 2 giờ/buổi = **312 buổi / 624 giờ**. Ngày bắt đầu kế hoạch: 02/11/2026 (có thể thay đổi mà không coi ngày trên lịch là tiến độ học).
 
-## Bắt đầu
-1. Đọc [hướng dẫn học](docs/study-guide.md) và [nguồn tài liệu](resources/README.md).
-2. Thực hiện [tuần 01](curriculum/semester-01/week-01/README.md) theo lịch 3 buổi.
-3. Lưu bài làm trong `labs/`; ghi kết quả/ảnh chụp vào `notes/`.
-4. Cập nhật trạng thái trong Google Sheets; đưa code, test và kết quả vào commit.
+## Bắt đầu trong 3 bước
 
-## Lộ trình
-| Giai đoạn | Tuần | Nội dung |
-|---|---:|---|
-| HK1 | 1–26 | Toán, điện, mạch, điện tử, Python, ESP32 cơ bản (tuần 23–26) |
-| HK2 | 27–52 | Tín hiệu, điều khiển, cảm biến, truyền động, PLC |
-| HK3 | 53–78 | PLC nâng cao, PID, HMI/SCADA, mạng công nghiệp, đồ án |
-| HK4 | 79–104 | MQTT, bảo mật OT, ESP32 + IIoT (tuần 83–86), Python gateway, database, API, dashboard, capstone |
+1. Đọc [AGENTS.md](AGENTS.md) để agent đóng vai giảng viên; xem [cấu trúc dự án](docs/architecture.md).
+2. Xem [giáo án tuần 01](curriculum/semester-01/week-01/README.md) và [kế hoạch Excel](roadmap/README.md).
+3. Mở repo trong Codex / Antigravity / Cursor / Copilot, yêu cầu: **“Đọc AGENTS.md và learning/progress.json, bắt đầu buổi chưa đạt đầu tiên; hướng dẫn và giao bài nhưng không giải hộ.”**
 
-[Xem đề bài project](projects/README.md) · [Tiêu chí nghiệm thu](docs/assessment.md) · [Mẫu báo cáo lab](templates/lab-report.md)
+## Cấu trúc
 
-> **An toàn:** Không làm việc với điện lưới, tủ điện đang mang điện hoặc thiết bị chuyển động nguy hiểm khi chưa có đào tạo và giám sát phù hợp. Mọi thử nghiệm khởi đầu dùng mô phỏng.
+| Thư mục / Tệp | Vai trò |
+|---|---|
+| [AGENTS.md](AGENTS.md) + [.agents/](.agents/) | Hợp đồng giảng viên và kỹ năng dùng chung |
+| [curriculum/](curriculum/) | Giáo án **đã biên soạn** (hiện có 3 tuần mẫu) |
+| [roadmap/](roadmap/) | [Excel snapshot 104 tuần / 312 buổi](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx) |
+| [resources/](resources/) | Tài liệu học, phần mềm, nguồn tham khảo |
+| [labs/](labs/) | Mã lab mẫu và mô phỏng |
+| [submissions/](submissions/) | Bài **thực tế** học viên nộp |
+| [projects/](projects/) | Đề tài, milestone, rubric |
+| [learning/](learning/) | Tiến độ chuẩn `progress.json`, lịch sử chấm |
+| [scripts/](scripts/) + [tests/](tests/) | CLI tiến độ và unit tests |
+| [docs/](docs/) + [templates/](templates/) | Quy trình và mẫu bài học/báo cáo |
 
+Các phần trên được mô tả chi tiết ở [architecture](docs/architecture.md) và [báo cáo review](docs/review-report.md).
 
-## AI Instructor / Trợ giảng cá nhân
+## Lịch học và giáo án
 
-Repo được cấu hình để agent hoạt động như **giảng viên kỹ thuật PLC/SCADA/IIoT**, không chỉ viết code:
+- Lịch đầy đủ từng buổi: [Google Sheets](https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit) và [Excel được version hóa](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx).
+- Giáo án đã viết: [Tuần 01](curriculum/semester-01/week-01/README.md), [Tuần 23 — ESP32](curriculum/semester-01/week-23/README.md), [Tuần 83 — ESP32 IIoT](curriculum/semester-04/week-83/README.md).
+- **Các tuần chưa có file giáo án chi tiết**; AI chỉ được tạo dự thảo dựa trên lịch và nguồn được kiểm tra, không khẳng định đã tồn tại 312 bài giảng.
 
-- [AGENTS.md](AGENTS.md): hợp đồng hành vi và vai trò giảng viên cho các agent hỗ trợ.
-- [.github/copilot-instructions.md](.github/copilot-instructions.md): hướng dẫn dành cho GitHub Copilot.
-- [.cursor/rules/technical-instructor.mdc](.cursor/rules/technical-instructor.mdc): project rule dành cho Cursor.
-- [Teaching contract](docs/teaching-contract.md): phong cách giảng dạy, an toàn, nguyên tắc không giải hộ.
-- [Learning workflows](docs/learning-workflows.md): dạy → làm bài → chấm → chữa → ôn.
-- [Learning progress](learning/progress.md): ghi nhận trạng thái học; **hiện bắt đầu ở Not Started**, chưa có điểm.
-- [Daily lesson template](templates/daily-lesson.md), [exercise template](templates/exercise.md), [grading report](templates/grading-report.md).
+## Lưu tiến độ
 
-### Cách gọi trong chat của AI agent (mở repository dưới dạng workspace)
-
-```text
-Bắt đầu học buổi tiếp theo theo AGENTS.md và learning/progress.md.
-```
-
-```text
-Hãy giao 3 bài tập về chủ đề hôm nay, cho rubric và chỉ gợi ý khi tôi yêu cầu.
-```
-
-```text
-Chấm bài trong [đường dẫn file nộp]. Giải thích từng lỗi, điểm /100,
-phân biệt test đã chạy và test chưa chạy.
-```
-
-GitHub Copilot có prompt files:
-- [Start lesson](.github/prompts/start-lesson.prompt.md)
-- [Grade assignment](.github/prompts/grade-assignment.prompt.md)
-- [Prepare lab](.github/prompts/prepare-lab.prompt.md)
-
-**Lưu ý:** các instruction files được áp dụng tùy agent/IDE và cấu hình phiên làm việc. Chúng không tạo ra một dịch vụ AI chạy thường trực trên GitHub; cần mở repository trong agent có hỗ trợ đọc quy tắc. Lịch 104 tuần ở Google Sheets là kế hoạch, **không đồng nghĩa đã có 312 giáo án chi tiết**. Việc chấm và ghi tiến độ yêu cầu có bài làm thực tế và quyền cập nhật.
-
-
-## Codex & Google Antigravity (portable instructor skills)
-
-Cả hai nền tảng dùng chung `AGENTS.md` và **4 skills** trong `.agents/skills/`:
-
-| Skill | Nhiệm vụ | Codex | Antigravity |
-|---|---|---|---|
-| `teach-lesson` | Giảng bài 120 phút | `$teach-lesson` | `/teach-lesson` |
-| `prepare-simulation-lab` | Hướng dẫn lab mô phỏng | `$prepare-simulation-lab` | `/prepare-simulation-lab` |
-| `grade-submission` | Chấm điểm theo minh chứng /100 | `$grade-submission` | `/grade-submission` |
-| `curate-learning-resources` | Tìm tài liệu và bài tập đúng bài | `$curate-learning-resources` | `/curate-learning-resources` |
-
-Antigravity có thêm quy tắc kích hoạt theo ngữ cảnh trong `.agents/rules/`. **Không cần tạo `GEMINI.md` trùng lặp** vì đã có `AGENTS.md` dùng chung.
-
-Xem [hướng dẫn cấu hình và smoke tests cho từng nền tảng](docs/agent-platforms.md). Các skill có thể được gọi tự động hoặc bằng cú pháp trên tùy phiên bản agent. Repository chỉ quy định hành vi; kết nối Google Sheets và khả năng thực thi code phụ thuộc quyền/công cụ của agent.
-
-
-## Bản Excel trong GitHub
-- [Lộ trình chuẩn 104 tuần / 312 buổi (XLSX)](roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx)
-- **Google Sheets** là bản dùng theo dõi tiến độ; **XLSX trong Git** là bản snapshot để lưu phiên bản và làm việc offline. Khi thay đổi một bản cần chủ động đồng bộ bản còn lại.
-
-## Lưu và khôi phục tiến độ học tập
-
-Dự án có hệ thống theo dõi **312 buổi** bằng dữ liệu version-controlled trong Git:
-
-- [Hướng dẫn lưu tiến độ](learning/README.md)
-- [Trạng thái máy đọc được](learning/progress.json)
-- [Nhật ký thay đổi](learning/history.jsonl)
-- [Công cụ Python](scripts/progress.py)
+`learning/progress.json` là **nguồn chính** cho trạng thái, điểm số và buổi học tiếp theo; `learning/history.jsonl` lưu lịch sử. Google Sheets là bản kế hoạch/theo dõi tùy chọn, **không tự đồng bộ**.
 
 ```bash
 python scripts/progress.py status
 python scripts/progress.py start 1
-# Sau khi đã tạo và lưu bài giải thực tế:
-python scripts/progress.py submit 1 --evidence labs/semester-01/week-01/report.md
-# Chỉ chấm nếu đã có bài và bằng chứng:
-python scripts/progress.py grade 1 --score 80 --evidence labs/semester-01/week-01/report.md --feedback "Đạt"
-git add learning/progress.json learning/history.jsonl
-git commit -m "Track learning progress"
-git push origin main
+# Sau khi bạn đã tạo file bài nộp thật:
+python scripts/progress.py submit 1 --evidence submissions/semester-01/week-01/session-001/report.md
+# Chỉ dùng khi đã có bài và giảng viên đánh giá dựa trên minh chứng:
+python scripts/progress.py grade 1 --score 85 --evidence submissions/semester-01/week-01/session-001/report.md --feedback "Đạt yêu cầu"
 ```
 
-**Quan trọng:** Lệnh cập nhật tiến độ ghi vào tệp local; chỉ `git push` mới lưu tiến độ mới lên GitHub để các agent/máy khác đọc được. Việc ghi nhận điểm phải dựa trên bài nộp thật. Không tự động đồng bộ Google Sheets.
+Lệnh ghi dữ liệu **cục bộ**. Để các agent/máy khác đọc được, cần `git add`, `git commit`, `git push` khi bạn đã đồng ý. [Hướng dẫn chi tiết](learning/README.md).
+
+## AI hỗ trợ
+
+- **Codex + Antigravity:** dùng `AGENTS.md`, bốn skill trong `.agents/skills/`.
+- **Antigravity:** hai rule có điều kiện trong `.agents/rules/`.
+- **Cursor:** `.cursor/rules/technical-instructor.mdc`.
+- **GitHub Copilot:** `.github/copilot-instructions.md` và `.github/prompts/`.
+
+[Hướng dẫn từng agent](docs/agent-platforms.md) · [Quy trình giảng dạy](docs/learning-workflows.md) · [Rubric](docs/assessment.md)
+
+> **An toàn:** Mô phỏng trước; không đấu điện lưới/24V trực tiếp vào GPIO ESP32 3.3V; không thay chức năng an toàn máy bằng PLC thường. Repo hiện là **public**, vì vậy không commit thông tin nhạy cảm hoặc dữ liệu thực tế có tính riêng tư.
