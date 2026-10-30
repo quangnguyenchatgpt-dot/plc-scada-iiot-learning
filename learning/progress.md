@@ -1,18 +1,10 @@
-# Tiến độ học tập — hướng dẫn đọc
+# Hướng dẫn đọc tiến độ
 
-**Nguồn chính xác là [progress.json](progress.json)**, không phải bảng markdown này. Lịch: 104 tuần × 3 buổi × 2 giờ = **312 buổi / 624 giờ** (thứ Hai, Tư, Sáu).
+**Nguồn chuẩn duy nhất:** [progress.json](progress.json). File Markdown này không lưu điểm hay trạng thái; đọc [learning/README.md](README.md) và dùng `python scripts/progress.py status`.
 
-Trạng thái ban đầu chưa có buổi nào hoàn thành và chưa có điểm. Agent phải đọc dữ liệu mới nhất từ `progress.json`, không suy luận theo ngày hiện tại. Nhật ký thay đổi nằm trong [history.jsonl](history.jsonl).
+- Kế hoạch: 104 tuần × 3 buổi/tuần × 120 phút = 312 buổi / 624 giờ.
+- Các ngày học: Thứ Hai, Thứ Tư, Thứ Sáu.
+- [Nhật ký thay đổi](history.jsonl) (chỉ ghi sự kiện thực tế).
+- [Excel snapshot](../roadmap/PLC_SCADA_IIoT_104_Weeks_3_Days_ESP32.xlsx) là lịch học, **không phải hồ sơ tiến độ**.
 
-## Lệnh cần dùng
-
-```bash
-python scripts/progress.py status
-python scripts/progress.py start 1
-python scripts/progress.py submit 1 --evidence labs/semester-01/week-01/report.md
-python scripts/progress.py grade 1 --score 85 --evidence labs/semester-01/week-01/report.md --feedback "Nhận xét dựa trên bằng chứng"
-```
-
-**Chỉ dùng đường dẫn có thật, đúng bài nộp.** Các lệnh thao tác tệp cục bộ; muốn agent khác thấy, cần commit/push thay đổi lên GitHub.
-
-Hướng dẫn đầy đủ: [learning/README.md](README.md). Google Sheet theo dõi tùy chọn: https://docs.google.com/spreadsheets/d/1xPHHIHrBS6cPpaPiYvN9yzLG-ZiGUM93roKuzVM6iMw/edit
+Để ghi nhận buổi học, nộp bài hoặc chấm điểm, dùng lệnh mô tả trong [README của learning](README.md) khi có sự đồng ý. Muốn máy/agent khác nhìn thấy thay đổi cục bộ, cần commit và push.
