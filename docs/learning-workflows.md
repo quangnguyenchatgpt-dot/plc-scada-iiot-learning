@@ -1,63 +1,33 @@
-# Workflows / State machine for the AI Instructor
+# Quy trình giảng dạy, thực hành và đánh giá
 
-## 1. PREPARE → TEACH → PRACTICE → ASSESS → REVIEW
-### PREPARE
-- Read `learning/progress.md`. If unknown, start Week 01 Day 01 or ask student to choose.
-- Read lesson if authored; otherwise consult the Google Sheets plan and **draft a lesson**, mark it as not yet curated.
-- Check prerequisites and availability of simulator/tools.
-- Source 1–3 legal, reliable references. Differentiate a course catalog URL from exact lesson URL.
+## 1. PREPARE
+- Đọc `learning/progress.json` qua `python scripts/progress.py status` nếu có thể. Không dựa vào ngày hiện tại.
+- Dựa trên session ID, tính tuần `(id-1)//3+1`, buổi trong tuần `(id-1)%3+1`.
+- Mở giáo án của tuần nếu có. Nếu chưa có, xem roadmap, tra tài liệu chính thức và tạo **bản nháp có nhãn draft**.
+- Kiểm tra tiên quyết, công cụ/mô phỏng và 1–3 nguồn tham khảo. Phân biệt trang danh mục và link bài cụ thể.
 
-### TEACH (120 min total; do not claim time elapsed)
-Default: 15 min recall/prerequisite → 35 min concept → 20 min worked example → 40 min independent task/lab → 10 min self-check and notes.
-Existing daily lesson timings take precedence. Never claim to have waited or run a study timer.
-Explain concepts in small chunks; pause for student reply where interactive teaching is possible.
+## 2. TEACH (120 phút)
+Mặc định: 15 phút nhắc lại → 35 phút khái niệm → 20 phút ví dụ hướng dẫn → 40 phút luyện tập độc lập → 10 phút tự kiểm. Nếu giáo án ngày cung cấp phân bổ khác nhưng tổng 120 phút, ưu tiên giáo án. Dạy theo từng phần; không giả vờ đã trôi qua 120 phút.
 
-### PRACTICE
-- Define goal, givens, input/output, software/version assumptions, safety, tests and deliverables.
-- Start with conceptual hint, not solution.
-- Keep a reproducible `README.md` or lab report; include normal/boundary/fault cases as relevant.
-- For simulations, distinguish expected vs observed outputs.
+## 3. PRACTICE
+Đề bài phải rõ đầu vào/đầu ra, đơn vị, phần mềm, hướng dẫn tái lập, case normal/boundary/fault khi phù hợp, đường dẫn nộp trong `submissions/` (không chấm `labs/` mẫu). Gợi ý dần, không đưa full solution trừ khi yêu cầu.
 
-### ASSESS
-- Ask for path/content of answer or code only if not present.
-- Read whole submitted artifact before scoring.
-- Run tests if actual runtime access permits, record command and output; otherwise **Not executed**.
-- Score with [rubric](assessment.md); identify critical errors and specific repairs.
-- Write feedback using [grading template](../templates/grading-report.md).
-- Status: `Not Started` / `In Progress` / `Submitted` / `Needs Revision` / `Passed`. Only mark Passed after sufficient evidence and score ≥75.
-- Offer one targeted reattempt; record before/after score if permitted.
+## 4. ASSESS
+Đọc bài nộp thật. Thực thi test nếu có quyền và môi trường; nếu không ghi **chưa chạy**. Chấm theo `docs/assessment.md`, cung cấp bằng chứng, điểm /100, lỗi, cách cải thiện. Đạt khi ≥75 và không có lỗi an toàn nghiêm trọng.
 
-### REVIEW
-- Discuss 1–3 misconceptions, spaced-review prompts and next lesson.
-- Suggest progress entry; **only update files/Google Sheet if authorized**.
+## 5. PERSIST
+Sau khi người học cho phép:
+1. `python scripts/progress.py start <id>` khi bắt đầu.
+2. `python scripts/progress.py submit <id> --evidence <file-da-ton-tai>` khi có bài nộp thực.
+3. `python scripts/progress.py grade <id> --score N --evidence <same-file> --feedback "..."` sau khi chấm thật.
+4. Nếu được phép rõ ràng, `git add` / `git commit` / `git push` để các thiết bị/agent khác nhận dữ liệu.
+5. Google Sheets chỉ cập nhật theo yêu cầu và khi có kết nối. Nếu xung đột với JSON, báo rõ, không ghi đè âm thầm.
 
-## 2. Progressive hints
-1. **Hint 1**: Ask an orienting question; clarify known/unknown quantities.
-2. **Hint 2**: Identify a relevant law, formula, diagram or PLC structure.
-3. **Hint 3**: Walk through the first intermediate operation, leaving the rest to student.
-4. **Full solution**: only at user's request or after an authentic attempt; annotate reasoning and test.
+## 6. REVIEW / ÔN TẬP
+Nhận xét sai sót, đưa 1–3 câu ôn tăng cường và xác định buổi chưa passed tiếp theo. Chỉ đổi lộ trình khi người học chấp thuận.
 
-## 3. Resource retrieval
-Record *title, authoritative owner, direct URL, language, prerequisite, free/paid status if known, and intended use*. Verify chapter/lecture links before treating them as exact. Avoid invented URLs.
-Prioritize MIT OCW, All About Circuits, fbsbook.org, CODESYS help, Siemens SCE, Ignition University, Modbus, OPC Foundation, Python/Node-RED/Grafana official docs.
-
-## 4. Debugging protocol
-`Observed → Expected → Minimal reproduction → Hypothesis → Test → Cause → Fix → Regression test`.
-If live system risks safety, use sandbox/mocks and request qualified oversight.
-
-## 5. State persistence
-Repository is not automatic agent memory. Update `learning/progress.md` and Google Sheet status explicitly and only with student's approval. When the two conflict, surface the mismatch rather than silently overwrite.
-
-## 6. When user asks for a daily lesson not yet authored
-1. Read intended day/topic from Sheets.
-2. Produce a self-contained draft following `templates/daily-lesson.md`.
-3. Label resources as verified direct lesson vs general catalog.
-4. Assign a concrete graded exercise and a reproducible lab.
-5. Do not state that draft has been committed unless a write succeeds.
-
-## Persistence after each real study session
-- Read `learning/README.md` and use `python scripts/progress.py status` as the authoritative progress lookup. The `learning/progress.json` session map overrides stale notes in `learning/progress.md`.
-- Ask permission before changing state. Use `start` when learner begins, `submit` only when evidence file exists, and `grade` only after reviewing actual work and giving evidence-backed assessment.
-- All updates are captured in `learning/history.jsonl`; assessments are never silently replaced.
-- Let the student approve `git add`, `git commit` and `git push`; without push, other agents do not receive the changes.
-- Do not silently update Google Sheets. If permission and live app connectivity exist, sync explicitly and record whether it succeeded; otherwise report the two sources may differ.
+## 7. QUY TẮC BỔ SUNG
+- Không tạo bài nộp/chứng cứ hoặc điểm số giả.
+- Không sửa hoặc xóa `learning/progress.json` trong tác vụ review hoặc tái cấu trúc repository.
+- Không đưa secrets, API keys, nhật ký sản xuất hoặc dữ liệu riêng tư lên GitHub.
+- Không tự suy đoán tài liệu 312 buổi đã hoàn chỉnh: chỉ số tuần trong roadmap không đảm bảo tồn tại giáo án.
