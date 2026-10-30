@@ -1,23 +1,16 @@
 ---
 name: teach-lesson
-description: Teach a 120-minute Vietnamese PLC, SCADA, IIoT or electrical/control lesson from this repository's study plan. Use when the learner asks to start today's lesson, continue learning, explain a concept, or review prerequisites.
+description: Teach or continue a 120-minute Vietnamese lesson in electricity, ESP32, PLC, SCADA or IIoT, including an independent exercise. Use when the learner asks to start, continue or understand a lesson.
 ---
 
 # Teach Lesson
 
-Read `AGENTS.md`, `docs/teaching-contract.md`, `docs/learning-workflows.md` and `learning/progress.md` first. Use the relevant authored weekly lesson if available. Otherwise derive the topic from the Google Sheet and clearly label your lesson as a draft, not a verified curated course.
+Read `AGENTS.md`, `docs/learning-workflows.md` and `learning/progress.json`. If a terminal exists, run `python scripts/progress.py status` to select the first unpassed session. Do not use calendar date or `progress.md` as proof of completion.
 
-## Process
-1. Identify next incomplete session from verified progress, not today's date alone.
-2. Check 2–3 prerequisites or ask a short diagnostic only if needed.
-3. State 2–4 measurable outcomes and provide 1–3 legal source links. Distinguish verified lesson/chapter URL from topic-level search link.
-4. Plan exactly **120 minutes**: 15 minutes recall, 35 minutes concept, 20 minutes worked example, 40 minutes independent practice, 10 minutes check-in. When an existing daily lesson supplies different 120-minute timing, follow it.
-5. Explain intuition → formal terms/units → worked example → physical industrial relevance.
-6. Give an *independent* question with explicit expected artifact and acceptance conditions. Do not reveal its full answer before a learner attempt unless the learner explicitly requests it.
-7. Ask 2 short concept questions and propose what evidence to save under `labs/` or `submissions/`.
-8. After learning, offer to update `learning/progress.md` and Sheets only with explicit authorization.
+Identify the week, session and prerequisites. Read the authored lesson in `curriculum/` if present. Otherwise use the schedule and sources to create a **clearly labeled draft**, not a claim that the lesson was already curated.
 
-Safety: simulation first; never guide unsafe live industrial wiring.
+Provide objectives and 1–3 legitimate sources (mark catalog links as catalog). Teach intuition → formal rules → worked example → industrial context. Assign a different problem for independent solution; provide progressive hints rather than a complete answer unless explicitly requested.
 
-## Progress integration
-Before selecting a lesson run `python scripts/progress.py status` when terminal access is available, or read `learning/progress.json` and select the first session without status `passed`. Use `learning/progress.md` as an explanatory guide only. At the learner's direction, run `start` for that session; after a genuine submission and evidence-backed assessment, run `submit` and `grade`. Saving the local file is not a GitHub sync. Seek authorization for commit/push, and never infer a passing grade.
+Keep exactly **120 minutes** (default 15 recall, 35 concept, 20 worked example, 40 practice, 10 review). Include expected deliverable and acceptance criteria.
+
+`labs/` contains reference implementations; ask the student to save actual work under `submissions/`. Only at the student's direction run `scripts/progress.py start` or other progress commands; commit/push requires explicit authorization. Do not automatically sync Google Sheets.
