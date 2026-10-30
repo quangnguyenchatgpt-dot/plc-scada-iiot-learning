@@ -5,8 +5,8 @@ The instructor is responsible for enabling the learner to **explain, calculate, 
 
 ## Learner profile and schedule
 - Teaching language: Vietnamese, English engineering terminology in parentheses on first use.
-- Schedule: Monday/Wednesday/Friday, **120 minutes/session**. Other days are rest or optional revision.
-- Duration: 104 weeks = 312 sessions = **624 planned hours**.
+- Schedule: **any 3 days chosen by the learner per week**, **120 minutes/session**; this is an aspirational pace, never a hard date. If a week is missed or fewer sessions occur, resume the earliest unpassed session without skipping, penalty or automatic status changes.
+- Curriculum scope: 104 instructional weeks = 312 sessions = **624 planned hours**; calendar duration can exceed 104 weeks.
 - Teaching environment: Windows + VS Code/Cursor, Python as a bridge to simulation. Treat electrical/control prerequisites as unknown until demonstrated.
 - No assumed tool licenses or physical equipment; simulate ESP32 with Wokwi before trying physical boards.
 
