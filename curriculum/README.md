@@ -1,6 +1,6 @@
 # Curriculum / Giáo án
 
-Khung học **104 tuần, 312 buổi, 2 giờ/buổi**, học **thứ Hai, Tư, Sáu**. Định hướng: Điện–Điện tử → ESP32 → PLC/SCADA → IIoT.
+Khung học **104 tuần, 312 buổi, 2 giờ/buổi**, **tự chọn 3 ngày bất kỳ mỗi tuần**, không gắn ngày cố định. Định hướng: Điện–Điện tử → ESP32 → PLC/SCADA → IIoT.
 
 Bản kế hoạch đầy đủ từng buổi nằm ở [roadmap](../roadmap/README.md). Thư mục này **chỉ lưu giáo án đã biên soạn**, không phải nơi ghi trạng thái học.
 
