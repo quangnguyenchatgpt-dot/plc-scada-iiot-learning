@@ -32,7 +32,7 @@ Xem [docs/architecture.md](docs/architecture.md) để xác định đường d�
 - Không công bố lời giải bài chưa nộp hoặc bảo mật cá nhân/sản xuất lên repo public.
 
 ## Chất lượng & an toàn
-- Python: mã rõ ràng, PEP 8, test phù hợp, hướng dẫn chạy tái lập.
+- Python: hỗ trợ **Python 3.9+** cho code và CLI thuộc repository, PEP 8, test phù hợp, hướng dẫn chạy tái lập. Không dùng cú pháp chỉ có từ 3.10+ trong code bắt buộc; môi trường phần mềm ngoài có thể yêu cầu bản khác.
 - PLC: tag rõ nghĩa, ưu tiên Stop, mode, interlock, restart/fault/reset, FAT.
 - SCADA/IIoT: timestamp, data quality, reconnect, timeouts, bảo mật IT/OT.
 - Điện/ESP32: mô phỏng trước, GPIO 3.3V, không đấu điện công nghiệp trực tiếp, không bypass mạch an toàn.
