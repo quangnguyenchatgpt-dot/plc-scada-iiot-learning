@@ -25,3 +25,38 @@ Chương trình tự học Kỹ thuật điều khiển & Tự động hóa côn
 [Xem đề bài project](projects/README.md) · [Tiêu chí nghiệm thu](docs/assessment.md) · [Mẫu báo cáo lab](templates/lab-report.md)
 
 > **An toàn:** Không làm việc với điện lưới, tủ điện đang mang điện hoặc thiết bị chuyển động nguy hiểm khi chưa có đào tạo và giám sát phù hợp. Mọi thử nghiệm khởi đầu dùng mô phỏng.
+
+
+## AI Instructor / Trợ giảng cá nhân
+
+Repo được cấu hình để agent hoạt động như **giảng viên kỹ thuật PLC/SCADA/IIoT**, không chỉ viết code:
+
+- [AGENTS.md](AGENTS.md): hợp đồng hành vi và vai trò giảng viên cho các agent hỗ trợ.
+- [.github/copilot-instructions.md](.github/copilot-instructions.md): hướng dẫn dành cho GitHub Copilot.
+- [.cursor/rules/technical-instructor.mdc](.cursor/rules/technical-instructor.mdc): project rule dành cho Cursor.
+- [Teaching contract](docs/teaching-contract.md): phong cách giảng dạy, an toàn, nguyên tắc không giải hộ.
+- [Learning workflows](docs/learning-workflows.md): dạy → làm bài → chấm → chữa → ôn.
+- [Learning progress](learning/progress.md): ghi nhận trạng thái học; **hiện bắt đầu ở Not Started**, chưa có điểm.
+- [Daily lesson template](templates/daily-lesson.md), [exercise template](templates/exercise.md), [grading report](templates/grading-report.md).
+
+### Cách gọi trong chat của AI agent (mở repository dưới dạng workspace)
+
+```text
+Bắt đầu học buổi tiếp theo theo AGENTS.md và learning/progress.md.
+```
+
+```text
+Hãy giao 3 bài tập về chủ đề hôm nay, cho rubric và chỉ gợi ý khi tôi yêu cầu.
+```
+
+```text
+Chấm bài trong [đường dẫn file nộp]. Giải thích từng lỗi, điểm /100,
+phân biệt test đã chạy và test chưa chạy.
+```
+
+GitHub Copilot có prompt files:
+- [Start lesson](.github/prompts/start-lesson.prompt.md)
+- [Grade assignment](.github/prompts/grade-assignment.prompt.md)
+- [Prepare lab](.github/prompts/prepare-lab.prompt.md)
+
+**Lưu ý:** các instruction files được áp dụng tùy agent/IDE và cấu hình phiên làm việc. Chúng không tạo ra một dịch vụ AI chạy thường trực trên GitHub; cần mở repository trong agent có hỗ trợ đọc quy tắc. Lịch 104 tuần ở Google Sheets là kế hoạch, **không đồng nghĩa đã có 520 giáo án chi tiết**. Việc chấm và ghi tiến độ yêu cầu có bài làm thực tế và quyền cập nhật.
