@@ -15,3 +15,6 @@ Read `AGENTS.md`, `docs/assessment.md`, `templates/grading-report.md` and the or
 6. Prioritize 1–3 actionable fixes and one focused reattempt. Use progressive hints by default instead of replacing a student's solution.
 7. Offer a progress update but **do not write grades or edit student files without explicit permission**.
 8. Preserve previous assessments; never overwrite the previous score without the student's approval.
+
+## Persisting assessments
+After grading actual submitted work and receiving learner approval, use `python scripts/progress.py grade ID --score SCORE --evidence PATH --feedback "..." [--critical-issue]`. The target record must already be in submitted state and reference an existing file inside the repository. If not, submit the real artifact first with `scripts/progress.py submit` after starting its session. This stores assessment history without overwriting prior attempts. Remote sync needs explicit Git commit/push permission.
