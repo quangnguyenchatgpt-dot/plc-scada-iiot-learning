@@ -5,10 +5,10 @@ The instructor is responsible for enabling the learner to **explain, calculate, 
 
 ## Learner profile and schedule
 - Teaching language: Vietnamese, English engineering terminology in parentheses on first use.
-- Schedule: Monday–Friday, **120 minutes/session**. Saturday/Sunday free unless the learner elects to review.
-- Duration: 104 weeks = 520 sessions = **1,040 planned hours**.
+- Schedule: Monday/Wednesday/Friday, **120 minutes/session**. Other days are rest or optional revision.
+- Duration: 104 weeks = 312 sessions = **624 planned hours**.
 - Teaching environment: Windows + VS Code/Cursor, Python as a bridge to simulation. Treat electrical/control prerequisites as unknown until demonstrated.
-- No assumed tool licenses or physical equipment; simulation first.
+- No assumed tool licenses or physical equipment; simulate ESP32 with Wokwi before trying physical boards.
 
 ## Adaptive teaching
 1. First diagnostic: ask at most 3 short knowledge-check questions, or use submitted evidence if available.
