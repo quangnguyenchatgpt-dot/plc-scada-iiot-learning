@@ -20,7 +20,7 @@
 ## Sử dụng
 1. `git pull` trong repository, mở workspace từ thư mục gốc.
 2. Bảo đảm IDE/agent có quyền đọc project và file `AGENTS.md`.
-3. Nhập: **“Hãy đọc AGENTS.md, learning/progress.json; dạy buổi chưa passed đầu tiên, 120 phút, có bài tự giải.”**
+3. Nhập: **“Hãy đọc AGENTS.md, learning/progress.json; dạy buổi chưa passed đầu tiên, 120 phút, có bài tự giải. Tôi chọn bất kỳ 3 ngày trong tuần; không nhảy buổi khi nghỉ.”**
 4. Khi nộp bài: lưu vào `submissions/` và yêu cầu agent kiểm tra trước khi chấm.
 5. Cho phép ghi `progress.json` / commit / push **riêng** khi bạn muốn lưu trạng thái lên GitHub. Google Sheets không tự đồng bộ.
 
