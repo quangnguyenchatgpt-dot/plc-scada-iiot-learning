@@ -5,7 +5,7 @@ description: Teach or continue a 120-minute Vietnamese lesson in electricity, ES
 
 # Teach Lesson
 
-Read `AGENTS.md`, `docs/learning-workflows.md` and `learning/progress.json`. If a terminal exists, run `python scripts/progress.py status` to select the first unpassed session. Do not use calendar date or `progress.md` as proof of completion.
+Read `AGENTS.md`, `docs/learning-workflows.md` and `learning/progress.json`. If a terminal exists, run `python scripts/progress.py status` to select the first unpassed session. The learner chooses any three study days weekly. After missed days or weeks, continue the earliest unpassed session, never skip. Do not use calendar date or `progress.md` as proof of completion.
 
 Identify the week, session and prerequisites. Read the authored lesson in `curriculum/` if present. Otherwise use the schedule and sources to create a **clearly labeled draft**, not a claim that the lesson was already curated.
 
