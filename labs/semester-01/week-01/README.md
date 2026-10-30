@@ -1,6 +1,6 @@
 # Week 01 — Python simulation
 
-Không cần thư viện bên thứ ba; chỉ cần Python 3.10+.
+Không cần thư viện bên thứ ba; chỉ cần Python 3.9+.
 
 Tại thư mục gốc repository:
 
