@@ -60,3 +60,19 @@ GitHub Copilot có prompt files:
 - [Prepare lab](.github/prompts/prepare-lab.prompt.md)
 
 **Lưu ý:** các instruction files được áp dụng tùy agent/IDE và cấu hình phiên làm việc. Chúng không tạo ra một dịch vụ AI chạy thường trực trên GitHub; cần mở repository trong agent có hỗ trợ đọc quy tắc. Lịch 104 tuần ở Google Sheets là kế hoạch, **không đồng nghĩa đã có 520 giáo án chi tiết**. Việc chấm và ghi tiến độ yêu cầu có bài làm thực tế và quyền cập nhật.
+
+
+## Codex & Google Antigravity (portable instructor skills)
+
+Cả hai nền tảng dùng chung `AGENTS.md` và **4 skills** trong `.agents/skills/`:
+
+| Skill | Nhiệm vụ | Codex | Antigravity |
+|---|---|---|---|
+| `teach-lesson` | Giảng bài 120 phút | `$teach-lesson` | `/teach-lesson` |
+| `prepare-simulation-lab` | Hướng dẫn lab mô phỏng | `$prepare-simulation-lab` | `/prepare-simulation-lab` |
+| `grade-submission` | Chấm điểm theo minh chứng /100 | `$grade-submission` | `/grade-submission` |
+| `curate-learning-resources` | Tìm tài liệu và bài tập đúng bài | `$curate-learning-resources` | `/curate-learning-resources` |
+
+Antigravity có thêm quy tắc kích hoạt theo ngữ cảnh trong `.agents/rules/`. **Không cần tạo `GEMINI.md` trùng lặp** vì đã có `AGENTS.md` dùng chung.
+
+Xem [hướng dẫn cấu hình và smoke tests cho từng nền tảng](docs/agent-platforms.md). Các skill có thể được gọi tự động hoặc bằng cú pháp trên tùy phiên bản agent. Repository chỉ quy định hành vi; kết nối Google Sheets và khả năng thực thi code phụ thuộc quyền/công cụ của agent.
