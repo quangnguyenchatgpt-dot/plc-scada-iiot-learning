@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "program": {
+    "weeks": 104,
+    "sessions_per_week": 3,
+    "minutes_per_session": 120,
+    "total_sessions": 312
+  },
+  "sessions": {},
+  "updated_at": null
+}
