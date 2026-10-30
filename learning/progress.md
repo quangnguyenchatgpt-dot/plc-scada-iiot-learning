@@ -7,7 +7,7 @@ This repository does not automatically track study completion. Update this file 
 | Current week | 01 |
 | Current day | 01 |
 | State | Not Started |
-| Planned pace | 2 hours/day, Monday–Friday |
+| Planned pace | 2 hours/day, Monday / Wednesday / Friday |
 | Last completed session | None |
 | Last confirmed score | Not assessed |
 | Current blockers | None recorded |
