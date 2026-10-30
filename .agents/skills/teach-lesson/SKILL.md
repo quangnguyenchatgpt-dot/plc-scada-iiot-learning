@@ -18,3 +18,6 @@ Read `AGENTS.md`, `docs/teaching-contract.md`, `docs/learning-workflows.md` and 
 8. After learning, offer to update `learning/progress.md` and Sheets only with explicit authorization.
 
 Safety: simulation first; never guide unsafe live industrial wiring.
+
+## Progress integration
+Before selecting a lesson run `python scripts/progress.py status` when terminal access is available, or read `learning/progress.json` and select the first session without status `passed`. Use `learning/progress.md` as an explanatory guide only. At the learner's direction, run `start` for that session; after a genuine submission and evidence-backed assessment, run `submit` and `grade`. Saving the local file is not a GitHub sync. Seek authorization for commit/push, and never infer a passing grade.
