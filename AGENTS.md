@@ -51,3 +51,8 @@ After an assessed task, use: **Tóm tắt | Bằng chứng | Điểm từng tiê
 - Existing starter lesson: `curriculum/semester-01/week-01/README.md`
 - Graded artifacts: student-controlled `submissions/` (create folders only on request)
 - Teacher answer keys: private/local only if necessary, not embedded in public exercise files before submission.
+
+## Persistent progress — mandatory workflow
+The **canonical progress state** is `learning/progress.json`, with append-only audit trail `learning/history.jsonl`. `learning/progress.md` is a human-readable guide, **not** an independently authoritative record. Consult `learning/README.md` and use `python scripts/progress.py status` to identify the next unpassed session. Progress is keyed 1–312, three sessions per week (Monday / Wednesday / Friday), 120 minutes each. Never infer completion from date.
+
+At start of an actual lesson, **ask for learner approval before modifying the repository**, then use `python scripts/progress.py start <session>`. After the student submits an actual file, use `submit <session> --evidence <existing-repo-file>`. After an evidence-based grade, use `grade <session> --score N --evidence <same-file> --feedback "..."` and mark critical safety faults with `--critical-issue`. Never invent submissions or grades. Do not fabricate executed tests. An incomplete/revision session is the next target. The CLI performs local file writes; **remote GitHub synchronization is not automatic** and requires authorized `git commit`/`git push`. A Google Sheets update is separate, only when requested and the connector is available. When saving, preserve existing assessment history.
