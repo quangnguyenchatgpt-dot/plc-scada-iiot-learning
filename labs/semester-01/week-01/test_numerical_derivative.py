@@ -1,4 +1,4 @@
-"""Basic verification using unittest; run python -m unittest discover -s labs -p 'test_*.py'."""
+"""Basic verification using unittest; run python labs/semester-01/week-01/test_numerical_derivative.py."""
 import unittest
 from numerical_derivative import analytic_derivative, central_difference
 
