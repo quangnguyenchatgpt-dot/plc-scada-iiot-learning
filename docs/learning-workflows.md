@@ -54,3 +54,10 @@ Repository is not automatic agent memory. Update `learning/progress.md` and Goog
 3. Label resources as verified direct lesson vs general catalog.
 4. Assign a concrete graded exercise and a reproducible lab.
 5. Do not state that draft has been committed unless a write succeeds.
+
+## Persistence after each real study session
+- Read `learning/README.md` and use `python scripts/progress.py status` as the authoritative progress lookup. The `learning/progress.json` session map overrides stale notes in `learning/progress.md`.
+- Ask permission before changing state. Use `start` when learner begins, `submit` only when evidence file exists, and `grade` only after reviewing actual work and giving evidence-backed assessment.
+- All updates are captured in `learning/history.jsonl`; assessments are never silently replaced.
+- Let the student approve `git add`, `git commit` and `git push`; without push, other agents do not receive the changes.
+- Do not silently update Google Sheets. If permission and live app connectivity exist, sync explicitly and record whether it succeeded; otherwise report the two sources may differ.
