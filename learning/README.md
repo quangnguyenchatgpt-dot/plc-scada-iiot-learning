@@ -8,7 +8,7 @@
 
 Mỗi buổi định danh bằng `session_id` 1–312; tuần `ceil(session_id/3)`, buổi trong tuần `(session_id-1)%3+1`. Theo lịch thứ Hai/Tư/Sáu. Dữ liệu ban đầu trống: **chưa học / chưa có điểm**.
 
-## Dùng công cụ (Python 3.10+; không cài thư viện ngoài)
+## Dùng công cụ (Python 3.9+; không cài thư viện ngoài)
 
 Tại thư mục gốc của repo:
 
