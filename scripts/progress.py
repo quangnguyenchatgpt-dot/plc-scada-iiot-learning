@@ -9,6 +9,7 @@ import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "learning" / "progress.json"
@@ -137,7 +138,7 @@ def action_grade(data: dict, number: int, score: int, evidence: str,
             "score": score, "result": rec["status"], "evidence": ref}
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("status", help="Xem buổi tiếp theo và tổng tiến độ")
